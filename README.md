@@ -1,5 +1,3 @@
-# Web_Scraping_Projects
-
 # Web Scraping Projects
 
 Welcome to my Web Scraping Projects repository! This repository contains a collection of my personal projects related to web scraping using Python and the Selenium driver. Each project explores different aspects of web scraping, including data extraction and automation.
