@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <! -- header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-color-classified">
+        <div class="container">
+          <a class="navbar-brand" href="http://127.0.0.1:5000/">أنمي سكرابر</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/anime-list/page/1"> قائمة مسلسلات الأنمي</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#top"> قائمة الأكثر شعبية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about-us">من نحن</a>
+              </li>              
+          </div>
+        </div>
+    </nav>
+
+    <! -- home -->
+    <section class="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="home-item">
+                <h2 class="display-6"> ابحث عن الأنمي الآن ! </h2>
+                <div class="search-form my-5">
+
+                <form class="form1" action="#">
+
+                  <input type="text" placeholder="بحث.." name="search">
+                  <button type="submit" id = "test"  ><i class="fa fa-search"></i></button>
+                
+                </form>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+
+   <! --footer -->
+    <footer class="page-footer">
+     <div class="footer-content">
+       <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <p>أنمي سكرابر © 2021 </p>
+          </div>
+          <div class="col-6">
+            <p id="tw-logo">
+              <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+       </div>
+     </div>
+   </footer>
+
+
+
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+{% endblock %}

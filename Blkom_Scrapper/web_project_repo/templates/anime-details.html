@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block body %}
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <! --navbar --!>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-color-classified">
+    <div class="container">
+      <a class="navbar-brand" href="http://127.0.0.1:5000/">أنمي سكرابر</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/anime-list/page/1"> قائمة مسلسلات الأنمي</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5000/#top"> قائمة الأكثر شعبية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us">من نحن</a>
+          </li>              
+      </div>
+    </div>
+  </nav>
+  <! --anime info-- !>
+    <div class="container p-4 my-4" id="anime-info-container">
+      <div class="row">
+          <div class="col-12 col-lg-3 col-md-3">
+                <div class="poster">
+                 <img src="/static/img/{{data['name']}}.jpeg" id="poster-img" alt="test.jpg" >
+               </div>
+          </div>
+          <div class="col-12 col-lg-9 col-md-9">
+                <div class="anime-inf">
+
+                    <h1 class="display-6 my-2" style="color: wheat;">اسم الأنمي: {{data['name']}}</h1>
+                    <h2>قصة الانمي:</h2>
+                    <div class="anime-desciption">
+                        <p>”	{{data['description']}} 	“</p>
+                    </div>
+                    <h2>تقيم الأنمي: {{data['rate']}}</h2>
+                    <H2>عدد الحلقات المضافة: {{data['episodes']|length}}</H2>
+                </div>
+            </div>
+       </div>    
+    </div>
+    <div class="container p-4 my-4" id="anime-info-container">
+      <h3> ذات صلة</h3>
+    </div>
+  <! --anime episodes-- !>
+    <div class="container p-4 my-4" id="anime-info-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="anime-episodes my-4 mx-2">
+                     <h2>حلقات الأنمي:</h2>
+                     <div class="anime-episodes-links-list my-4">
+                        {% for i in range(0, data['episodes']|length) %}
+                          <a href="{{ link[i]['Blkom'] }}" id="eps-links" target="_blank">{{ i+1 }}</a>
+                        {% endfor %}
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <! --footer -->
+    <footer class="page-footer">
+     <div class="footer-content">
+       <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <p>أنمي سكرابر © 2021 </p>
+          </div>
+          <div class="col-6">
+            <p id="tw-logo">
+              <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+       </div>
+     </div>
+   </footer>
+
+
+
+    <script src="script.js"></script>
+  </body>
+{% endblock %}

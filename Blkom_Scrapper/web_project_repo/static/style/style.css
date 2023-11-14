@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+
+body{
+  direction: rtl;
+  font-family: "Cairo", sans-serif;
+  background-color: #0c0d0e;
+  text-align: right;
+  
+
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
+
+.navbar-brand{
+    color: #b05e0f !important ;
+    padding: 15px !important ;
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-shadow: 1px 2px 3px #0b0b0b;
+}
+.navbar-brand:hover{
+  color: #eebb8a !important ;
+}
+.bg-color-classified{
+  background-color: #15181a;
+}
+
+.home{
+    height: 800px;
+    background-image: linear-gradient( rgb(31 31 31 / 19%), rgb(55 55 55 / 19%) ), url(thumb-1920-656029.webp);
+    background-size: cover;
+    border-bottom: 5px solid #b35802ed;
+}
+
+.home-item{
+height: 220px;
+    padding: 34px;
+    margin-top: 15%;
+    width: 72%;
+    margin-right: 16%;
+    box-shadow: 1px 1px 1px 1px #000000ad;
+    border-radius: 5px;
+    background-color: #b35802ed;
+      
+}
+
+.home-item h2{
+  color:#ffff !important;
+  font-size: 25px;
+  letter-spacing: 3px;
+  text-align: center
+}
+
+
+.search-form{
+    padding: 1%;
+    box-shadow: 0px 0px 4px 0px #ffffff8f;
+}
+form.form1 input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 79%;
+    background: #f1f1f1;
+}
+
+form.form1 button{
+   float: left;
+    width: 18%;
+    padding: 10px;
+    background: #c47020ed;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.form1 button:hover {
+  background: #ff922aed;
+}
+
+/*  Clear floats */
+form.form1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+.top-animes-list h1{
+  text-align: center !important;
+  color: #880f0ff5 !important;
+}
+
+.top-animes-list mark{
+    background-color: #1d2328ad;
+    color: #ffff;
+    border-radius: 5px;
+    font-size: 22px;
+    padding: 18px;
+    box-shadow: 1px 2px 3px #0000004d;
+    letter-spacing: 3px;
+    border: 2px solid #b05e0f;
+
+}
+
+#table{
+  border: 1px solid #b05e0f;
+}
+
+tr{
+  color:#ffff;
+}
+
+.page-footer{
+    
+    
+    padding-bottom: 0px;
+    position: relative;
+    top: 100%;
+
+}
+
+.footer-content{
+  background: #353535de;
+  height: 86px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+  
+
+
+.footer-content p{
+  margin-top: 6%;
+  font-size: 16px;
+  color:#ffffff82;
+}
+#tw-logo{
+  text-align: left;
+  margin-top: 4%;
+}
+#tw-logo i{
+  font-size: 35px;
+  margin-top: 1%;
+  color:#ffffff82;
+}
+#tw-logo i:hover{
+color:#145388;
+}
+
+.anime-list-header{
+    width: 100%;
+    height: 310px;
+    background-image: linear-gradient( rgb(31 31 31 / 19%), rgb(55 55 55 / 19%) ), url(all-anime-in-one-wallpaper-10-scaled.jpg);
+    border-bottom: 5px solid #b35802ed;
+    background-size: cover;
+}
+
+
+#classified-card{
+    background: #ccb19700;
+    border-radius: 0;
+    width: 100%;
+    height: 95%;
+    border: 0;
+    
+
+
+}
+#classified-card:hover img{
+  mix-blend-mode: luminosity;
+}
+#classified-card:hover #classified-card-body{
+  background-color: #212529f2;
+  color: white;
+}
+
+
+#classified-img-card{
+  height: 300px;
+}
+
+#classified-img-card:hover{
+  mix-blend-mode: luminosity;
+}
+
+#classified-card-body{
+    padding: 2px;
+    margin: 0px;
+    background-color: #b35802ed;
+    color: #ffff;
+    
+}
+
+#classified-card-body:hover{
+  background-color: #212529f2;
+  color: white;
+}
+
+
+
+#classified-card-title{
+    margin: 15px;
+    font-size: 15px;
+    text-align: center;
+
+}
+#card-details{
+  text-decoration: none;
+  color: white;
+}
+
+.pagination-edited{
+  direction: ltr;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start
+
+}
+
+.pagination-edited a{
+    color: #ffff;
+    background-color: #434444;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #121619;
+}
+.pagination-active{
+      background-color: #b05e0f !important;
+}
+.pagination-edited a:hover:not(.active) {
+  background-color: #ddd;
+  color:black;
+  }
+
+
+#anime-info-container{
+      background-color: #15181a;
+}
+.poster{
+  border: 5px solid #b05e0f;
+}
+
+#poster-img{
+  height: 100%;
+  width:100%;
+}
+
+.anime-inf{
+  padding: 8px; 
+  border-radius: 5px;
+}
+.anime-inf h1{
+  color:wheat;
+}
+.anime-inf h2{
+   color: wheat; 
+   margin-top: 3.5%; 
+   font-size: 20px;
+   margin-bottom: 1%;
+}
+.anime-desciption{
+    background-color: #292e3173;
+    margin: 0px;
+    padding: 1px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.anime-desciption p{
+  padding: 27px;
+  color: white; 
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.anime-episodes h2{
+  color:wheat;
+}
+.anime-episodes-links-list{
+  direction: ltr;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#eps-links{
+    text-decoration: none;
+    padding: 8px 16px;
+    background: #121619;
+    color: white;
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    width: 14%;
+    border:1px solid white;
+    font-size:16px;
+}
+
+#eps-links:hover{
+    background: #b05e0f;
+    color: white;
+    border:0;
+}
+
+.searched-items{
+  background-color: #1f262bed;
+  color: wheat;
+  padding: 55px;
+  margin-top: 6%;
+}
+
+.space{
+  height: 50px;
+}
+
+
+
+#searched-animes h2{
+  color: wheat;
+  padding: 2%;
+}
+
+
+

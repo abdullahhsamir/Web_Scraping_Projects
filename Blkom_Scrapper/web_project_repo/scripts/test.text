@@ -1,0 +1,154 @@
+from flask import Flask,render_template,request
+import json
+
+app = Flask(__name__)
+@app.route("/")
+def homepage():
+    search = request.args.get('search')
+    print(search)
+    if search == '':
+        return render_template("index.html")
+    if search == 'None':
+        return render_template("index.html")
+    if search != None:
+        f = open('data.json')
+        data = json.load(f)
+        index = int(search) - 1
+        episdoe = data[index]['episode']
+        keys = []
+        vals = []
+        string = ""
+
+        for j in range(len(data[index]['streams'])):
+            key, val = list( data[index]['streams'][j].items() )[0] 
+            keys.append(key)
+            vals.append(val)
+            string += '''<p> Server: {},  Link: {} </p>'''.format(key,val)
+        
+
+        return '''<p>Episode: {} </p>    '''.format(episdoe) +  string
+    return render_template("index.html")
+
+
+ 
+if __name__ == "__main__":
+    app.run()
+
+
+
+
+
+
+
+
+
+
+
+
+    {% for i in jsonfile %}
+    <div class="col">
+      <div class="jumbotron jumbotron-classfied" id = "jumbo" style="color: white;">
+            <h1 class="display-4" style="color: white;">الحلقة : {{i['episode']}}</h1>
+            {% for j in range(i['streams']| length) %}
+              {% for key, value in i['streams'][j].items() %}
+                <div class="content">
+                    <p class="lead" style="color: white;">سيرفر المشاهدة {{key}}</p>
+                    <p class="lead" style="color: white;"><a class="btn btn-primary btn-lg" href= {{value}} role="button">انقر للمشاهدة</a></p>
+                </div>
+              {% endfor %}
+            {% endfor %}  
+      </div>
+    </div>
+   {% endfor %}
+
+
+
+   <! --top animes -->
+   <section class="top-animes" id="top-animes">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+           <div class="top-animes-list">
+             <h1 class="display-4 my-5" id="top">
+               <mark>
+
+                 قائمة الأنميات الأعلي تقييماً
+               </mark>
+
+             </h1>
+             
+             <table class="table table-hover">
+               <tr>
+                 <th> اسم الأنمي </th>
+                 <th> التقيم </th>
+                 <th> عدد الحلقات </th>
+
+               </tr>
+               <tr>
+                   <td>Fullmetal Alchemist: Brotherhood</td>
+                   <td>9.15</td>
+                   <td>64 حلقة</td>
+               </tr>
+               <tr>
+                   <td>Gintama 2015</td>
+                   <td>9.09</td>
+                   <td>51 حلقة</td>
+               </tr>
+               <tr>
+                   <td>Shingeki no Kyojin Season 3 Part 2</td>
+                   <td>9.09</td>
+                   <td>10 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Steins;Gate</td>
+                   <td>9.09</td>
+                   <td>24 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Fruits Basket: The Final</td>
+                   <td>9.06</td>
+                   <td>13 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Hunter x Hunter (2011)</td>
+                   <td>9.09</td>
+                   <td>13 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Gintama 2011</td>
+                   <td>9.06</td>
+                   <td>13 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Gintama 2015</td>
+                   <td>9.06</td>
+                   <td>148 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Ginga Eiyuu Densetsu</td>
+                   <td>9.04</td>
+                   <td>110 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Gintama': Enchousen</td>
+                   <td>9.04</td>
+                   <td>13 حلقة</td>
+               </tr>
+              <tr>
+                   <td>3-gatsu no Lion 2nd Season</td>
+                   <td>8.97</td>
+                   <td>22 حلقة</td>
+               </tr>
+              <tr>
+                   <td>Clannad: After Story</td>
+                   <td>8.95</td>
+                   <td>24 حلقة</td>
+               </tr>
+               
+
+             </table>
+           </div>
+         </div>
+       </div>
+     </div>    
+   </section>
